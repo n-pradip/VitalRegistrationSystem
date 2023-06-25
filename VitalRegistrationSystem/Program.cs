@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 
-builder.Services.AddDbContext<VRSDataContext>(options => options.UseNpgsql(
+builder.Services.AddDbContext<VRSDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("DefaultConnectionString")
     ));
 

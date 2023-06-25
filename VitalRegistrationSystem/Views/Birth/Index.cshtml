@@ -1,0 +1,130 @@
+﻿@model IEnumerable<BirthModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container-fluid">
+
+    <div class="container-fluid pt-3 px-3">
+        <div class="row pt-4">
+            <div class="col-6">
+                <h2 class="text-primary">Birth Registration List</h2>
+            </div>
+            <div class="col-6 text-end">
+                <a asp-controller="Birth" asp-action="Create" class="btn btn-primary">
+                    <i class="bi bi-plus-circle"></i> &nbsp; New Birth Registration
+                </a>
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                BirthId
+            </th>
+            <th>
+                Applicant Name
+            </th>
+            <th>
+                Applicant Address
+            </th>
+            <th>
+                Applicant's Citizenship Number
+            </th>
+            <th>
+                Grandfather's Name
+            </th>
+            <th>
+                Father's Name
+            </th>
+            <th>
+                Mother's Name
+            </th>
+            <th>
+                Date Of Birth
+            </th>
+            <th>
+                Child's Name
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Child's Address
+            </th>
+            <th>
+                Father's Citizenship Number
+            </th>
+            <th>
+                Mother's Citizenship Number
+            </th>
+            <th>
+                Birth Registration Date
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>
+                    @obj.BirthId
+                </td>
+                <td >
+                    @obj.ApplicantName
+                </td>
+                <td >
+                    @obj.ApplicantAddress
+                </td>
+                <td >
+                    @obj.ApplicantCitizenshipNum
+                </td>
+                <td >
+                    @obj.GrandFathersName
+                </td>
+                <td >
+                    @obj.FathersName
+                </td>
+                <td >
+                    @obj.MothersName
+                </td>
+                <td >
+                    @obj.DateOfBirth
+                </td>
+                <td >
+                    @obj.ChildName
+                </td>
+                <td >
+                    @obj.Gender
+                </td>
+                <td >
+                    @obj.ChildAddress
+                </td>
+                <td >
+                    @obj.FatherCitizenshipNumber
+                </td>
+                <td >
+                    @obj.MotherCitizenshipNumber
+                </td>
+                <td >
+                    @obj.BirthRegistrationDate
+                </td>
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                        <a asp-controller="Birth" asp-action="Update" asp-route-id="@obj.BirthId" class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i> &nbsp; Edit</a>
+                        <a asp-controller="Birth" asp-action="Delete" asp-route-id="@obj.BirthId" class="btn btn-danger mx-2"><i class="bi bi-trash-fill"></i> &nbsp; Delete</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

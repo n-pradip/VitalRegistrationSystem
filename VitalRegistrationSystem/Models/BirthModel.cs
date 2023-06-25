@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Infrastructure.Internal;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using VitalRegistrationSystem.Utilities;
 
@@ -17,15 +16,13 @@ namespace VitalRegistrationSystem.Models
         public string MothersName { get; set; }              //not null field
         public DateTime DateOfBirth { get; set; }            //not null field
 
-        [NotMapped]
-        public IFormFile ? HospitalVerification { get; set; }
+        //[NotMapped]
+        //public IFormFile ? HospitalVerification { get; set; }
         public string ChildName { get; set; }                //not null field
-        public Gender Gender { get; set; }                   //not null field
+        public Gender Gender { get; set; } = Gender.Male ;   //not null field
         public string ChildAddress { get; set; }             //not null field
         public string ? FatherCitizenshipNumber { get; set; }
         public string ? MotherCitizenshipNumber { get; set; }
-        public DateTime BirthRegistrationDate { get; set; }       
-
-
+        public DateTime BirthRegistrationDate { get; set; } = DateTime.Now;     
     }
 }

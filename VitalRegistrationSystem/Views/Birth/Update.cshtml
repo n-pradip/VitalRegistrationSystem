@@ -1,0 +1,85 @@
+﻿@model VitalRegistrationSystem.Models.BirthModel
+
+<div class="text-banner">
+    <h1 class="text-center">Update Birth Registration</h1>
+</div>
+
+<form asp-controller="Birth" asp-action="UpdateBirth" method="post" enctype="multipart/form-data" class="container px-4 py-4">
+    <input asp-for="BirthId" hidden />
+    <div class="row">
+        <div class="form-group my-4 col-6">
+            <label for="ApplicantName">Applicant's Name:</label>
+            <input type="text" class="form-control" id="ApplicantName" asp-for="ApplicantName" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="ApplicantAddress">Applicant's Address:</label>
+            <input type="text" class="form-control" id="ApplicantAddress" asp-for="ApplicantAddress" placeholder="Enter here ...">
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="ApplicantCitizenshipNum">Applicant's Citizenship Number:</label>
+            <input type="text" class="form-control" id="ApplicantCitizenshipNum" asp-for="ApplicantCitizenshipNum" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="GrandFathersName">Grandfather's Name:</label>
+            <input type="text" class="form-control" id="GrandFathersName" asp-for="GrandFathersName" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="FathersName">Father's Name:</label>
+            <input type="text" class="form-control" id="FathersName" asp-for="FathersName" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="MothersName">Mother's Name:</label>
+            <input type="text" class="form-control" id="MothersName" asp-for="MothersName" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="DateOfBirth">Date of Birth:</label>
+            <input type="date" class="form-control" id="DateOfBirth" asp-for="DateOfBirth" placeholder="Enter here ..." required>
+        </div>
+
+     @*   <div class="form-group my-4">
+            <label for="HospitalVerification">Hospital Verification Document:</label>
+            <input type="file" class="form-control-file" id="HospitalVerification" asp-for="HospitalVerification">
+        </div>
+*@
+        <div class="form-group my-4 col-6">
+            <label for="ChildName">Child's Name:</label>
+            <input type="text" class="form-control" id="ChildName" asp-for="ChildName" placeholder="Enter here ..." required>
+        </div>
+
+        @*  <div class="form-group my-4">
+        <label for="Gender">Gender:</label>
+        <select class="form-control" id="Gender" asp-for="Gender" required>
+        <option value="">Select Gender</option>
+        <option value="Male" @(Model.Gender == Gender.Male ? "selected" : "")>Male</option>
+        <option value="Female" @(Model.Gender == Gender.Female ? "selected" : "")>Female</option>
+        <option value="Other" @(Model.Gender == Gender.Other ? "selected" : "")>Other</option>
+        </select>
+        </div>*@
+
+        <div class="form-group my-4 col-6">
+            <label for="ChildAddress">Child's Address:</label>
+            <input type="text" class="form-control" id="ChildAddress" asp-for="ChildAddress" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="FatherCitizenshipNumber">Father's Citizenship Number:</label>
+            <input type="text" class="form-control" id="FatherCitizenshipNumber" asp-for="FatherCitizenshipNumber" placeholder="Enter here ...">
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="MotherCitizenshipNumber">Mother's Citizenship Number:</label>
+            <input type="text" class="form-control" id="MotherCitizenshipNumber" asp-for="MotherCitizenshipNumber" placeholder="Enter here ...">
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-controller="Birth" asp-action="Index" class="btn btn-alert">Back to Home</a>
+
+</form>

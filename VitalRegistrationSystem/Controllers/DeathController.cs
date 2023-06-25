@@ -4,40 +4,37 @@ using VitalRegistrationSystem.Models;
 
 namespace VitalRegistrationSystem.Controllers
 {
-    //[Route("[controller]")]
-    public class BirthController : Controller
+    public class DeathController : Controller
     {
         private readonly VRSDbContext _db;
 
-        public BirthController(VRSDbContext db)
+        public DeathController(VRSDbContext db)
         {
             _db = db;
         }
 
+        //Read
         [HttpGet]
-        //[Route("/birth/index")]
         public IActionResult Index()
         {
-            IEnumerable<BirthModel> birthObj = _db.Births.ToList();
-            return View(birthObj);
+            IEnumerable<DeathModel> deathObj = _db.Deaths.ToList();
+            return View(deathObj);
         }
 
         //Create operation
 
         [HttpGet]
-        //[Route("/birth/create")]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        //[Route("/birth/create")]
-        public IActionResult CreateBirth(BirthModel obj)
+        public IActionResult CreateDeath(DeathModel obj)
         {
             if (ModelState.IsValid)
             {
-                _db.Births.Add(obj);
+                _db.Deaths.Add(obj);
                 _db.SaveChanges();
                 //TempData["success"] = "Category created sucessfully";
                 return RedirectToAction("Index");
@@ -48,14 +45,13 @@ namespace VitalRegistrationSystem.Controllers
         //Update operation
 
         [HttpGet]
-        //[Route("/birth/update/{id:guid}")]
         public IActionResult Update(Guid? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-            var obj = _db.Births.FirstOrDefault(u => u.BirthId == id);
+            var obj = _db.Deaths.FirstOrDefault(u => u.DeathId == id);
 
             if (obj == null)
             {
@@ -66,12 +62,11 @@ namespace VitalRegistrationSystem.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        //[Route("/birth/update")]
-        public IActionResult UpdateBirth(BirthModel obj)
+        public IActionResult UpdateDeath(DeathModel obj)
         {
             if (ModelState.IsValid)
             {
-                _db.Births.Update(obj);
+                _db.Deaths.Update(obj);
                 _db.SaveChanges();
                 //TempData["success"] = "Category Updated sucessfully";
                 return RedirectToAction("Index");
@@ -80,48 +75,36 @@ namespace VitalRegistrationSystem.Controllers
         }
 
         //Delete operation 
-
-        //GET
         [HttpGet]
-        //[Route("/birth/delete/{id:guid}")]
         public IActionResult Delete(Guid? id)
         {
             if (id == null)
             {
-                Console.WriteLine("1");
                 return NotFound();
             }
-            var birthGuidFromDb = _db.Births.FirstOrDefault(u => u.BirthId == id);
-            Console.WriteLine("2");
-            if (birthGuidFromDb == null)
+            var deathGuidFromDb = _db.Deaths.FirstOrDefault(u => u.DeathId == id);
+            if (deathGuidFromDb == null)
             {
-                Console.WriteLine("3");
                 return NotFound();
             }
-            return View(birthGuidFromDb);
+            return View(deathGuidFromDb);
         }
 
-        //POST
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        //[Route("/birth/delete")]
-        public IActionResult DeleteBirth(Guid? id)
+        public IActionResult DeleteDeath(Guid? id)
         {
-            Console.WriteLine("4");
             if (id == null)
             {
-                Console.WriteLine("5");
                 return NotFound();
             }
 
-            var obj = _db.Births.FirstOrDefault(u => u.BirthId == id);
+            var obj = _db.Deaths.FirstOrDefault(u => u.DeathId == id);
             if (obj == null)
             {
-                Console.WriteLine("6");
                 return NotFound();
             }
-            Console.WriteLine("7");
-            _db.Births.Remove(obj);
+            _db.Deaths.Remove(obj);
             _db.SaveChanges();
             //TempData["success"] = "Category Deleted successfully";
             return RedirectToAction("Index");

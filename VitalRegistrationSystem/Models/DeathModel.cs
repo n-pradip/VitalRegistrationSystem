@@ -1,7 +1,11 @@
-﻿namespace VitalRegistrationSystem.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace VitalRegistrationSystem.Models
 {
     public class DeathModel
     {
+        [Key]
+        public Guid DeathId { get; set; }
         public string ApplicantName { get; set; }
         public string ApplicantCitizenshipNumber { get; set; }
         public string DeceasedName { get; set; }

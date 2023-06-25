@@ -1,0 +1,89 @@
+﻿@model VitalRegistrationSystem.Models.MarrigeModel
+
+<div class="text-banner">
+    <h1 class="text-center">Marrige Registration</h1>
+</div>
+
+<form asp-controller="Marrige" asp-action="Create" method="post" enctype="multipart/form-data" class="container px-4 py-4">
+    <div class="row">
+        <div class="form-group my-4 col-6">
+            <label for="BrideName">Bride's Name:</label>
+            <input type="text" class="form-control" id="BrideName" name="BrideName" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="BridegroomName">Bridegroom's Name:</label>
+            <input type="text" class="form-control" id="BridegroomName" name="BridegroomName" placeholder="Enter here ...">
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="BrideFather">Bride's Father:</label>
+            <input type="text" class="form-control" id="BrideFather" name="BrideFather" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="BridegroomFather">Bridegroom's Father:</label>
+            <input type="text" class="form-control" id="BridegroomFather" name="BridegroomFather" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="BrideGrandfather">Bride's Grandfather:</label>
+            <input type="text" class="form-control" id="BrideGrandfather" name="BrideGrandfather" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="BridegroomGrandfather">Bridegroom's Grandfather:</label>
+            <input type="text" class="form-control" id="BridegroomGrandfather" name="BridegroomGrandfather" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="BrideAddress">Bride's Address:</label>
+            <input type="text" class="form-control" id="BrideAddress" name="BrideAddress" placeholder="Enter here ..." required>
+        </div>
+        <div class="form-group my-4 col-6">
+            <label for="BridegroomAddress">Bridegroom's Address:</label>
+            <input type="text" class="form-control" id="BridegroomAddress" name="BridegroomAddress" placeholder="Enter here ..." required>
+        </div>
+
+        @*Age must be automatically calculated from DOB and sent in the request*@
+        <div class="form-group my-4 col-6">
+            <label for="BrideDOB">Bride's Date of Birth:</label>
+            <input type="date" class="form-control" id="BrideDOB" name="BrideDOB" placeholder="Enter here ..." required>
+        </div>
+        <div class="form-group my-4 col-6">
+            <label for="BridegroomDOB">Bridegroom's Date of Birth:</label>
+            <input type="date" class="form-control" id="BridegroomDOB" name="BridegroomDOB" placeholder="Enter here ..." required>
+        </div>
+
+       
+        <div class="form-group my-4 col-6">
+            <label for="BrideCitizenshipNumber">Bride's Citizenship Number:</label>
+            <input type="date" class="form-control" id="BrideCitizenshipNumber" name="BrideCitizenshipNumber" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="BridegroomCitizenshipNumber">Bridegroom's Citizenship Number:</label>
+            <input type="date" class="form-control" id="BridegroomCitizenshipNumber" name="BridegroomCitizenshipNumber" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="MarrigeDate">Marrige Date:</label>
+            <input type="date" class="form-control" id="MarrigeDate" name="MarrigeDate" placeholder="Enter here ..." required>
+        </div>
+
+
+        @*  <div class="form-group my-4">
+        <label for="Gender">Gender:</label>
+        <select class="form-control" id="Gender" name="Gender" required>
+        <option value="">Select Gender</option>
+        <option value="Male" @(Model.Gender == Gender.Male ? "selected" : "")>Male</option>
+        <option value="Female" @(Model.Gender == Gender.Female ? "selected" : "")>Female</option>
+        <option value="Other" @(Model.Gender == Gender.Other ? "selected" : "")>Other</option>
+        </select>
+        </div>*@
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>

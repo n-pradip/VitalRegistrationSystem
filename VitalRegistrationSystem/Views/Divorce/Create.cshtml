@@ -1,0 +1,78 @@
+﻿@model VitalRegistrationSystem.Models.DivorceModel
+
+<div class="text-banner">
+    <h1 class="text-center">Divorce Registration</h1>
+</div>
+
+<form asp-controller="Divorce" asp-action="Create" method="post" enctype="multipart/form-data" class="container px-4 py-4">
+    <div class="row">
+        <div class="form-group my-4 col-6">
+            <label for="HusbandName">Husband's Name:</label>
+            <input type="text" class="form-control" id="HusbandName" name="HusbandName" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="WifeName">Wife's Name:</label>
+            <input type="text" class="form-control" id="WifeName" name="WifeName" placeholder="Enter here ...">
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="HusbandFather">Husband's Father:</label>
+            <input type="text" class="form-control" id="HusbandFather" name="HusbandFather" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="WifeFather">Wife's Father:</label>
+            <input type="text" class="form-control" id="WifeFather" name="WifeFather" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="HusbandGrandfather">Husband's Grandfather:</label>
+            <input type="text" class="form-control" id="HusbandGrandfather" name="HusbandGrandfather" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="WifeGrandfather">Wife's Grandfather:</label>
+            <input type="text" class="form-control" id="WifeGrandfather" name="WifeGrandfather" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="HusbandAddress">Husband's Address:</label>
+            <input type="text" class="form-control" id="HusbandAddress" name="HusbandAddress" placeholder="Enter here ..." required>
+        </div>
+        <div class="form-group my-4 col-6">
+            <label for="WifeAddress">Wife's Address:</label>
+            <input type="text" class="form-control" id="WifeAddress" name="WifeAddress" placeholder="Enter here ..." required>
+        </div>
+
+        @*Age must be automatically calculated from DOB and sent in the request*@
+        <div class="form-group my-4 col-6">
+            <label for="HusbandDOB">Husband's Date of Birth:</label>
+            <input type="date" class="form-control" id="HusbandDOB" name="HusbandDOB" placeholder="Enter here ..." required>
+        </div>
+        <div class="form-group my-4 col-6">
+            <label for="WifeDOB">Wife's Date of Birth:</label>
+            <input type="date" class="form-control" id="WifeDOB" name="WifeDOB" placeholder="Enter here ..." required>
+        </div>
+
+
+        <div class="form-group my-4 col-6">
+            <label for="HusbandCitizenshipNumber">Husband's Citizenship Number:</label>
+            <input type="date" class="form-control" id="HusbandCitizenshipNumber" name="HusbandCitizenshipNumber" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="WifeCitizenshipNumber">Wife's Citizenship Number:</label>
+            <input type="date" class="form-control" id="WifeCitizenshipNumber" name="WifeCitizenshipNumber" placeholder="Enter here ..." required>
+        </div>
+
+        <div class="form-group my-4 col-6">
+            <label for="MarrigeDate">Marrige Date:</label>
+            <input type="date" class="form-control" id="MarrigeDate" name="MarrigeDate" placeholder="Enter here ..." required>
+        </div>
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
